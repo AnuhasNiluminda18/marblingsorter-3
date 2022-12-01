@@ -24,7 +24,7 @@ def main():
         st.write(figure)
         
 @st.cache
-def predict_class(image)::
+def predict_class(image):
 
     save_dest = Path('model')
     save_dest.mkdir(exist_ok=True)
