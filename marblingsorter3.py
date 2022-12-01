@@ -24,7 +24,8 @@ def main():
         st.write(figure)
         
 @st.cache
-def predict_class(image):
+def load_model():
+
 
     save_dest = Path('model')
     save_dest.mkdir(exist_ok=True)
@@ -39,7 +40,7 @@ def predict_class(image):
     model = torch.load(f_checkpoint, map_location=device)
     model.eval()
     return model
-
+def predict_class(image):
     test_image=image.resize((128,128))
     test_image=preprocessing.image.img_to_array(test_image)
     test_image=test_image/255.0
