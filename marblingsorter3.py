@@ -1,53 +1,61 @@
 import streamlit as st
+from PIL import Image,ImageOps
+import matplotlib.pyplot as plt
+import tensorflow_hub as hub
 import tensorflow as tf
-import streamlit as st
-
-
-@st.cache(allow_output_mutation=True) 
-def load_model():
-  model=tf.keras.models.load_model(r'/content/drive/MyDrive/my_model1.hdf5')
-  return model
-with st.spinner('Model is being loaded..'):
-  model=load_model()
-
-st.write("""
-         # Flower Classification
-         """
-         )
-
-st.write("""
-         # Beef Classification
-         """
-         )
-
-file = st.file_uploader("Please upload an brain scan file", type=["jpg", "png"])
-import cv2
-from PIL import Image, ImageOps
 import numpy as np
-st.set_option('deprecation.showfileUploaderEncoding', False)
-def import_and_predict(image_data, model):
-    
-        size = (180,180)    
-        image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
-        image = np.asarray(image)
-        img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        #img_resize = (cv2.resize(img, dsize=(75, 75),    interpolation=cv2.INTER_CUBIC))/255.
+from tensorflow.keras import preprocessing
+from tensorflow.keras.activations import softmax
+from tensorflow.keras.models import load_model 
+import os 
+import h5py 
+
+st.header("marbling Sorter")
+
+def main():
+    file_uploaded=st.file_uploader("choose the file", type= ['jpg','png','jpeg'])
+    if file_uploaded is not None:  
+        image=Image.open(file_uploaded)
+        figure=plt.figure()
+        plt.imshow(image)
+        plt.axis('off')
+        result= predict_class(image)
+        st.write(result)
+        st.write(figure)
         
-        img_reshape = img[np.newaxis,...]
+def predict_class(image):
+    #classifier_model= tf.keras.models.load_model(r'/content/drive/MyDrive/code/model_save/my_model1.hdf5')
+    #shape=((128,128,3))
+    #model= tf.keras.Sequential([hub.KerasLayer(classifier_model,input_shape=shape)])
+    @st.cache
+def load_model():
+
+    save_dest = Path('model')
+    save_dest.mkdir(exist_ok=True)
     
-        predictions = model.predict(img_reshape)
-        
-        return predictions
-if file is None:
-    st.text("Please upload an image file")
-else:
-    image = Image.open(file)
-    st.image(image, use_column_width=True)
-    predictions = import_and_predict(image, model)
-    score = tf.nn.softmax(predictions[0])
-    st.write(predictions)
-    st.write(score)
-    print(
-    "This image most likely belongs to {} with a {:.2f} percent confidence."
-    .format(class_names[np.argmax(score)], 100 * np.max(score))
-)
+    f_checkpoint = Path("model/content/drive/MyDrive/code/model_save/my_model1.hdf5")
+
+    if not f_checkpoint.exists():
+        with st.spinner("Downloading model... this may take awhile! \n Don't stop it!"):
+            from GD_download import download_file_from_google_drive
+            download_file_from_google_drive(cloud_model_location, f_checkpoint)
+    
+    model = torch.load(f_checkpoint, map_location=device)
+    model.eval()
+    return model
+    shape=((128,128,3))
+    model= tf.keras.Sequential([hub.KerasLayer(classifier_model,input_shape=shape)])
+    test_image=image.resize((128,128))
+    test_image=preprocessing.image.img_to_array(test_image)
+    test_image=test_image/255.0
+    test_image= np.expand_dims(test_image, axis=0)
+    class_names=['G1','G2','G3','G4','G5','G6','G7','G8']
+    predictions= model.predict(test_image)
+    scores=tf.nn.softmax(predictions[0])
+    scores=scores.numpy()
+    image_class=class_names[np.argmax(scores)]
+    results= "The photo you have uploaded is:{}".format(image_class)
+    return results 
+if __name__=="__main__":
+    main()
+
