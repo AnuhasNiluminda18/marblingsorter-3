@@ -26,7 +26,6 @@ st.write("""
          # beef Classification
          """
          )
-
 file = st.file_uploader("Please upload an brain scan file", type=["jpg", "png"])
 import cv2
 from PIL import Image, ImageOps
