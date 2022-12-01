@@ -19,7 +19,7 @@ def main():
         figure=plt.figure()
         plt.imshow(image)
         plt.axis('off')
-        result= predict_class(image)
+        results= predict_class(image)
         st.write(result)
         st.write(figure)
         
