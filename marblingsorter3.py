@@ -28,7 +28,7 @@ def predict_class(image):
     #shape=((128,128,3))
     #model= tf.keras.Sequential([hub.KerasLayer(classifier_model,input_shape=shape)])
     @st.cache
-def load_model():
+#def load_model():
 
     save_dest = Path('model')
     save_dest.mkdir(exist_ok=True)
