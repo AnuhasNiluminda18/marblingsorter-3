@@ -19,7 +19,7 @@ def main():
         figure=plt.figure()
         plt.imshow(image)
         plt.axis('off')
-        results= predict_class(image)
+        results= load_model()
         st.write(results)
         st.write(figure)
         
@@ -40,7 +40,7 @@ def load_model():
     model = torch.load(f_checkpoint, map_location=device)
     model.eval()
     return model
-def predict_class(image):
+
     test_image=image.resize((128,128))
     test_image=preprocessing.image.img_to_array(test_image)
     test_image=test_image/255.0
