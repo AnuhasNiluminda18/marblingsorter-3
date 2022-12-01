@@ -20,7 +20,7 @@ def main():
         plt.imshow(image)
         plt.axis('off')
         results= predict_class(image)
-        st.write(result)
+        st.write(results)
         st.write(figure)
         
 @st.cache
