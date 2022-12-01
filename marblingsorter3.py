@@ -19,7 +19,7 @@ def load_model():
     model = torch.load(f_checkpoint, map_location=device)
     model.eval()
     return model
-model=load_model()
+
 
 st.write("""
          # beef Classification
