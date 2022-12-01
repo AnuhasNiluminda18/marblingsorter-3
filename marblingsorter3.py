@@ -24,27 +24,10 @@ def main():
         st.write(figure)
         
 def predict_class(image):
-    #classifier_model= tf.keras.models.load_model(r'/content/drive/MyDrive/code/model_save/my_model1.hdf5')
-    #shape=((128,128,3))
-    #model= tf.keras.Sequential([hub.KerasLayer(classifier_model,input_shape=shape)])
-    @st.cache
-#def load_model():
-
-    save_dest = Path('model')
-    save_dest.mkdir(exist_ok=True)
-    
-    f_checkpoint = Path("model/content/drive/MyDrive/code/model_save/my_model1.hdf5")
-
-    if not f_checkpoint.exists():
-        with st.spinner("Downloading model... this may take awhile! \n Don't stop it!"):
-            from GD_download import download_file_from_google_drive
-            download_file_from_google_drive(cloud_model_location, f_checkpoint)
-    
-    model = torch.load(f_checkpoint, map_location=device)
-    model.eval()
-    return model
+    classifier_model= tf.keras.models.load_model(r'/content/drive/MyDrive/my_model1.hdf5')
     shape=((128,128,3))
     model= tf.keras.Sequential([hub.KerasLayer(classifier_model,input_shape=shape)])
+
     test_image=image.resize((128,128))
     test_image=preprocessing.image.img_to_array(test_image)
     test_image=test_image/255.0
