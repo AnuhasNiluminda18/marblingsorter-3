@@ -2,6 +2,7 @@ import streamlit as st
 import tensorflow as tf
 import streamlit as st
 from pathlib import Path
+import gdown
 
 @st.cache(allow_output_mutation=True)
 def load_model():
