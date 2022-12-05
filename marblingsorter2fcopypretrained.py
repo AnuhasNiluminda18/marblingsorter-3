@@ -1,14 +1,15 @@
 import streamlit as st
 import tensorflow as tf
 import streamlit as st
-import torch
+from tensorflow.keras import applications
 
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    model = torch.hub.load('pytorch/vision:v0.10.0', 'resnet18', pretrained=True)
-    model.eval()
+   def load_model():
+    model=applications.ResNet50(include_top=True, weights='imagenet')
     return model
+   
 
 with st.spinner('Model is being loaded..'):
   model=load_model()
