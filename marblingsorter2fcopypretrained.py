@@ -19,7 +19,7 @@ st.write("""
          """
          )
 #image = Image.open('/content/download.jpg')
-st.image(image, caption='Made in waya')
+#st.image(image, caption='Made in waya')
 file = st.file_uploader("Please upload an brain scan file", type=["jpg", "png"])
 class_names=['Group1-Select','Group2-Select','Group3-Choice','Group4-Choice','Group5-Prime','Group6-Prime']
 import cv2
