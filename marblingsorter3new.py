@@ -15,8 +15,8 @@ st.write("""
          # Beef Classification
          """
          )
-image = Image.open('/content/download.jpg')
-st.image(image, caption='Made in waya')
+#image = Image.open('/content/download.jpg')
+#st.image(image, caption='Made in waya')
 file = st.file_uploader("Please upload an brain scan file", type=["jpg", "png"])
 import cv2
 from PIL import Image, ImageOps
