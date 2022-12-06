@@ -1,13 +1,14 @@
 import streamlit as st
 import tensorflow as tf
 import streamlit as st
-import pickle
+
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-   picklefile = open("emp-model.pkl", "rb")
-   model = pickle.load(picklefile)
-   return model
+    model = torch.hub.load('pytorch/vision:v0.10.0', 'resnet18', pretrained=True)
+    model.eval()
+    return model
+
 with st.spinner('Model is being loaded..'):
   model=load_model()
 from PIL import Image, ImageOps
@@ -16,8 +17,9 @@ st.write("""
          """
          )
 #image = Image.open('/content/download.jpg')
-#st.image(image, caption='Made in waya')
+st.image(image, caption='Made in waya')
 file = st.file_uploader("Please upload an brain scan file", type=["jpg", "png"])
+class_names=['Group1-Select','Group2-Select','Group3-Choice','Group4-Choice','Group5-Prime','Group6-Prime']
 import cv2
 from PIL import Image, ImageOps
 import numpy as np
@@ -44,7 +46,9 @@ else:
     score = tf.nn.softmax(predictions[0])
     st.write(predictions)
     st.write(score)
-    class_names=['Group1-Select','Group2-Select','Group3-Choice','Group4-Choice','Group5-Prime','Group6-Prime']
+    pred_class=class_names[np.argmax(predictions)]
+    st.write("Predicted Class:",pred_class)
+    
     print(
     "This image most likely belongs to {} with a {:.2f} percent confidence.".format(class_names[np.argmax(score)], 100 * np.max(score))
 )
