@@ -5,7 +5,8 @@ import streamlit as st
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-  model=tf.keras.models.load_model(r'/content/my_model1.hdf5')
+   picklefile = open("emp-model.pkl", "rb")
+        model = pickle.load(picklefile)
   return model
 with st.spinner('Model is being loaded..'):
   model=load_model()
