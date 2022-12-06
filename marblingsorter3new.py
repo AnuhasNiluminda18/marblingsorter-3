@@ -5,9 +5,9 @@ import streamlit as st
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    model = torch.hub.load('pytorch/vision:v0.10.0', 'resnet18', pretrained=True)
-    model.eval()
-    return model
+   picklefile = open("emp-model.pkl", "rb")
+        model = pickle.load(picklefile)
+        return model
 
 with st.spinner('Model is being loaded..'):
   model=load_model()
