@@ -46,7 +46,7 @@ else:
     st.image(image, use_column_width=True)
     predictions = import_and_predict(image, model)
     score = tf.nn.softmax(predictions[0])
-    st.write(predictions)
+    #st.write(predictions)
     st.write(score)
     pred_class=class_names[np.argmax(predictions)]
     st.write("Predicted Class:",pred_class)
