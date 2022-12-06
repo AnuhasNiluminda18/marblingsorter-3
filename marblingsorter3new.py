@@ -7,7 +7,7 @@ import pickle
 def load_model():
    picklefile = open("emp-model.pkl", "rb")
    model = pickle.load(picklefile)
-return model
+   return model
 with st.spinner('Model is being loaded..'):
   model=load_model()
 from PIL import Image, ImageOps
