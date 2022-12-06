@@ -1,7 +1,7 @@
 import streamlit as st
 import tensorflow as tf
 import streamlit as st
-
+import pickle
 
 @st.cache(allow_output_mutation=True)
 def load_model():
