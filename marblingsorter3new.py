@@ -17,7 +17,7 @@ st.write("""
          """
          )
 from PIL import Image
-image = Image.open('download.jpg')
+image = Image.open('beefgradingcomparison.png')
 
 st.image(image, caption='Made in waya')
 file = st.file_uploader("Please upload an beef steal iamge", type=["jpg", "png"])
