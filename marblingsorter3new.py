@@ -19,8 +19,8 @@ st.write("""
 from PIL import Image
 image = Image.open('beefgradingcomparison.png')
 
-st.image(image, caption='Made in waya')
-file = st.file_uploader("Please upload an beef steal iamge", type=["jpg", "png"])
+st.image(image, caption='Made for your convenience')
+file = st.file_uploader("You can see the beef marbling status of your beef steak by uploading here", type=["jpg", "png"])
 class_names=['Group1-Select','Group2-Select','Group3-Choice','Group4-Choice','Group5-Prime','Group6-Prime']
 import cv2
 from PIL import Image, ImageOps
