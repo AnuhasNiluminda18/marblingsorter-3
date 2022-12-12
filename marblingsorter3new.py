@@ -16,12 +16,7 @@ st.write("""
          # Beef Marbling classifier
          """
          )
-"container": {"padding": "5!important", "background-color": "#fafafa"},
-        "icon": {"color": "orange", "font-size": "25px"}, 
-        "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-        "nav-link-selected": {"background-color": "#02ab21"},
-    }
-    )
+
 from PIL import Image
 image = Image.open('beefgradingcomparison.png')
 
