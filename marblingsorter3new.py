@@ -2,6 +2,7 @@ import streamlit as st
 import tensorflow as tf
 import streamlit as st
 import pickle
+from streamlit_option_menu import option_menu
 
 @st.cache(allow_output_mutation=True)
 def load_model():
