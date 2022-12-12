@@ -4,21 +4,6 @@ import streamlit as st
 import pickle
 from streamlit_option_menu import option_menu
 
-@st.cache(allow_output_mutation=True)
-def load_model():
-   picklefile = open("emp-model.pkl", "rb")
-   model = pickle.load(picklefile)
-   return model
-
-with st.spinner('Model is being loaded..'):
-  model=load_model()
-from PIL import Image, ImageOps
-st.write("""
-         # Beef Marbling classifier
-         """
-         )
-from PIL import Image
-image = Image.open('beefgradingcomparison.png')
 with st.sidebar:
     choose = option_menu("App Gallery", ["About"],
                          icons=['house', 'camera fill', 'kanban', 'book','person lines fill'],
@@ -44,6 +29,22 @@ if choose == "About":
     
     st.write("Sharone Li is a data science practitioner, enthusiast, and blogger. She writes data science articles and tutorials about Python, data visualization, Streamlit, etc. She is also an amateur violinist who loves classical music.\n\nTo read Sharone's data science posts, please visit her Medium blog at: https://medium.com/@insightsbees")    
     st.image(profile, width=700 )
+@st.cache(allow_output_mutation=True)
+def load_model():
+   picklefile = open("emp-model.pkl", "rb")
+   model = pickle.load(picklefile)
+   return model
+
+with st.spinner('Model is being loaded..'):
+  model=load_model()
+from PIL import Image, ImageOps
+st.write("""
+         # Beef Marbling classifier
+         """
+         )
+from PIL import Image
+image = Image.open('beefgradingcomparison.png')
+
 
 st.image(image, caption='Made for your convenience')
 file = st.file_uploader("You can see the beef marbling status of your beef steak by uploading here", type=["jpg", "png"])
