@@ -27,8 +27,8 @@ with st.sidebar:
         "icon": {"color": "orange", "font-size": "25px"}, 
         "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
         "nav-link-selected": {"background-color": "#02ab21"},
-logo = Image.open('beefgradingcomparison.png')
-profile = Image.open('beefgradingcomparison.png')
+logo == Image.open('beefgradingcomparison.png')
+profile == Image.open('beefgradingcomparison.png')
 if choose == "About":
     col1, col2 = st.columns( [0.8, 0.2])
     with col1:               # To display the header text using css style
