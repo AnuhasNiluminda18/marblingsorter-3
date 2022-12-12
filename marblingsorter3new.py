@@ -18,7 +18,7 @@ st.write("""
          )
 from PIL import Image
 image = Image.open('beefgradingcomparison.png')
-logo = Image.open(r'C:\Users\13525\Desktop\Insights_Bees_logo.png')
+logo = Image.open(Australian-Marble-Score-1.jpg')
 profile = Image.open(r'C:\Users\13525\Desktop\medium_profile.png')
 if choose == "About":
     col1, col2 = st.columns( [0.8, 0.2])
