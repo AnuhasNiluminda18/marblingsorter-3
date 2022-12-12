@@ -3,6 +3,7 @@ import tensorflow as tf
 import streamlit as st
 import pickle
 from streamlit_option_menu import option_menu
+from  PIL import Image
 
 with st.sidebar:
     choose = option_menu("App Gallery", ["About"],
