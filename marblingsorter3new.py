@@ -95,3 +95,5 @@ if choose == "Beef price analysis":
 
     if st.button('Open browser'):
          webbrowser.open_new_tab(url)
+    link = '[GitHub](http://github.com)'
+    st.markdown(link, unsafe_allow_html=True)
