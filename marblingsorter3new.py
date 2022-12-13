@@ -4,6 +4,8 @@ import streamlit as st
 import pickle
 from streamlit_option_menu import option_menu
 from  PIL import Image
+import webbrowser
+
 
 with st.sidebar:
     choose = option_menu("Main menu", ["About", "Beef Marbling Sorter", "Beef price analysis",],
@@ -88,3 +90,8 @@ if choose == "Beef Marbling Sorter":
         print(
         #"This image most likely belongs to {} with a {:.2f} percent confidence.".format(class_names[np.argmax(score)], 100 * np.max(score))
 )
+if choose == "Beef price analysis"
+    url = 'https://www.masterclass.com/articles/what-is-marbling-in-meat-learn-about-the-different-types-of-marbling-and-what-factors-impact-marbling'
+
+    if st.button('Open browser'):
+    webbrowser.open_new_tab(url)
