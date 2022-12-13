@@ -45,7 +45,7 @@ if choose == "Photo Editing":
         st.markdown('<p class="font">Upload your photo here...</p>', unsafe_allow_html=True)
         
     with col2:               # To display brand logo
-        st.image(logo,  width=150)
+        #st.image(logo,  width=150)
     #Add file uploader to allow users to upload photos
     uploaded_file = st.file_uploader("", type=['jpg','png','jpeg'])
     if uploaded_file is not None:
