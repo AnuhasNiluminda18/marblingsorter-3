@@ -18,9 +18,9 @@ with st.spinner('Model is being loaded..'):
   model=load_model()
 from PIL import Image, ImageOps
 #st.write("""
-         # Beef Marbling classifier
-         """
-         )
+ #        # Beef Marbling classifier
+   #      """
+    #     )
 
 from PIL import Image
 image = Image.open('beefgradingcomparison.png')
