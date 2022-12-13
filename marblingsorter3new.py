@@ -36,7 +36,7 @@ st.markdown('<p class="font">Beef Marbling classifier</p>', unsafe_allow_html=Tr
 
 
             
-if choose == "Photo Editing":
+if choose == "Beef Marbling Sorter":
     @st.cache(allow_output_mutation=True)
     def load_model():
         picklefile = open("emp-model.pkl", "rb")
