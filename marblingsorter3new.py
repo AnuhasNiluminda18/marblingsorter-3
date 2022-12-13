@@ -2,16 +2,8 @@ import streamlit as st
 import tensorflow as tf
 import streamlit as st
 import pickle
-streamlit_style = """
-			<style>
-			@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-
-			html, body, [class*="css"]  {
-			font-family: 'Roboto', sans-serif;
-			}
-			</style>
-			"""
-st.markdown(streamlit_style, unsafe_allow_html=True)
+with open( "style.css" ) as css:
+    st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
 
 @st.cache(allow_output_mutation=True)
 def load_model():
