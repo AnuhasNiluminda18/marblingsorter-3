@@ -3,6 +3,10 @@ import tensorflow as tf
 import streamlit as st
 import pickle
 
+st.markdown(""" <style> .font {
+font-size:50px ; font-family: 'Cooper Black'; color: #FF9633;} 
+</style> """, unsafe_allow_html=True)
+st.markdown('<p class="font">Guess the object Names</p>', unsafe_allow_html=True)
 
 @st.cache(allow_output_mutation=True)
 def load_model():
