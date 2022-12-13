@@ -46,7 +46,7 @@ if choose == "Beef Marbling Sorter":
     with st.spinner('Model is being loaded..'):
         model=load_model()
     from PIL import Image, ImageOps
-    st.write("""
+   # st.write("""
              # Beef Marbling classifier
              """
              )
