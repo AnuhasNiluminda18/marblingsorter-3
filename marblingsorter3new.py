@@ -39,17 +39,17 @@ st.markdown('<p class="font">Beef Marbling classifier</p>', unsafe_allow_html=Tr
 if choose == "Photo Editing":
     @st.cache(allow_output_mutation=True)
     def load_model():
-    picklefile = open("mymodelTransfer.pkl", "rb")
-    model = pickle.load(picklefile)
-    return model
+        picklefile = open("mymodelTransfer.pkl", "rb")
+        model = pickle.load(picklefile)
+        return model
 
     with st.spinner('Model is being loaded..'):
-    model=load_model()
+        model=load_model()
     from PIL import Image, ImageOps
     st.write("""
-         # Beef Marbling classifier
-         """
-         )
+             # Beef Marbling classifier
+             """
+             )
     from PIL import Image
     image = Image.open('beefgradingcomparison.png')
 
