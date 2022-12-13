@@ -94,4 +94,4 @@ if choose == "Beef price analysis":
     url = 'https://www.masterclass.com/articles/what-is-marbling-in-meat-learn-about-the-different-types-of-marbling-and-what-factors-impact-marbling'
 
     if st.button('Open browser'):
-    webbrowser.open_new_tab(url)
+         webbrowser.open_new_tab(url)
