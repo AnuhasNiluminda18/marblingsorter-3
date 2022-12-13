@@ -6,7 +6,7 @@ from streamlit_option_menu import option_menu
 from  PIL import Image
 
 with st.sidebar:
-    choose = option_menu("App Gallery", ["About", "Photo Editing", "Project Planning",],
+    choose = option_menu("Main menu", ["About", "Beef Marbling Sorter", "Beef price analysis",],
                          icons=['house', 'camera fill', 'kanban', 'book','person lines fill'],
                          menu_icon="app-indicator", default_index=0,
                          styles={
