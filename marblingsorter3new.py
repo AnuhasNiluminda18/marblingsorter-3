@@ -36,7 +36,7 @@ st.markdown('<p class="font">Beef Marbling classifier</p>', unsafe_allow_html=Tr
 
 
             
-elif choose == "Photo Editing":
+if choose == "Photo Editing":
     col1, col2 = st.columns( [0.8, 0.2])
     with col1:               # To display the header text using css style
         st.markdown(""" <style> .font {
