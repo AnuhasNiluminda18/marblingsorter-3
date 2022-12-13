@@ -90,7 +90,7 @@ if choose == "Beef Marbling Sorter":
         print(
         #"This image most likely belongs to {} with a {:.2f} percent confidence.".format(class_names[np.argmax(score)], 100 * np.max(score))
 )
-if choose == "Beef price analysis"
+if choose == "Beef price analysis":
     url = 'https://www.masterclass.com/articles/what-is-marbling-in-meat-learn-about-the-different-types-of-marbling-and-what-factors-impact-marbling'
 
     if st.button('Open browser'):
