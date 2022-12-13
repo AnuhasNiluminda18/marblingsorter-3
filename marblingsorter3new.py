@@ -34,7 +34,7 @@ font-size:50px ; font-family: 'Cooper Black'; color: #FF9633;}
 </style> """, unsafe_allow_html=True)
 st.markdown('<p class="font">Beef Marbling classifier</p>', unsafe_allow_html=True)
 
-else if choose == "Photo Editing":
+elif choose == "Photo Editing":
     col1, col2 = st.columns( [0.8, 0.2])
     with col1:               # To display the header text using css style
         st.markdown(""" <style> .font {
