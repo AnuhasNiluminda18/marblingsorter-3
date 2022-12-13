@@ -99,3 +99,5 @@ if choose == "Beef price analysis":
     st.markdown(link, unsafe_allow_html=True)
     link = '[More about marbling](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=0CAQQw7AJahcKEwjIqursnff7AhUAAAAAHQAAAAAQAw&url=https%3A%2F%2Fwww.masterclass.com%2Farticles%2Fwhat-is-marbling-in-meat-learn-about-the-different-types-of-marbling-and-what-factors-impact-marbling&psig=AOvVaw1gyAbF4erVKoA8j2rbis89&ust=1671042845137472)'
     st.markdown(link, unsafe_allow_html=True)
+    link = '[Different Type of classifiaction on beef marbling](https://www.steaksandgame.com/wagyu-beef-grading-and-marble-scores-15658)'
+    st.markdown(link, unsafe_allow_html=True)
