@@ -25,6 +25,7 @@ if choose == "About":
         font-size:20px ; font-family: 'Cooper Black'; color: #FF9633;} 
         </style> """, unsafe_allow_html=True)
         st.markdown('<p class="font">Marbling is the visible unsaturated (healthy) intramuscular fat that accumulates within the muscle and between the muscle fibre bundles. Visually, marbling is soft intramuscular (between the muscle fibre) fat made up of polyunsaturated, monounsaturated and saturated fats</p>', unsafe_allow_html=True)    
+        image = Image.open('beefgradingcomparison.png')
     with col2:               # To display brand log
        # st.image(logo, width=130 )
     
