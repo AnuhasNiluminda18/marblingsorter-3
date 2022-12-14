@@ -32,7 +32,7 @@ if choose == "About":
     #st.image(profile, width=700 )
     
 st.markdown(""" <style> .font {
-font-size:50px ; font-family: 'Cooper Black'; color: #FF9633;} 
+font-size:5px ; font-family: 'Cooper Black'; color: #FF9633;} 
 </style> """, unsafe_allow_html=True)
 st.markdown('<p class="font">Prime-Choice-Select</p>', unsafe_allow_html=True)
 
