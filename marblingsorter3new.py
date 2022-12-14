@@ -19,7 +19,7 @@ with st.sidebar:
     }
     )
 if choose == "About":
-    col1, col2 = st.columns( [0.8, 0.2])
+    col1, col2 = st.columns( [0.5, 0.5])
     with col1:               # To display the header text using css style
         st.markdown(""" <style> .font {
         font-size:35px ; font-family: 'Cooper Black'; color: #FF9633;} 
