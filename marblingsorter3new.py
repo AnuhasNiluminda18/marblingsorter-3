@@ -22,7 +22,7 @@ if choose == "About":
     col1, col2 = st.columns( [0.5, 0.5])
     with col1:               # To display the header text using css style
         st.markdown(""" <style> .font {
-        font-size:10px ; font-family: 'Cooper Black'; color: #070701;} 
+        font-size:2px ; font-family: 'Cooper Black'; color: #070701;} 
         </style> """, unsafe_allow_html=True)
         st.markdown('<p class="font">Marbling is the visible unsaturated (healthy) intramuscular fat that accumulates within the muscle and between the muscle fibre bundles. Visually, marbling is soft intramuscular (between the muscle fibre) fat made up of polyunsaturated, monounsaturated and saturated fats</p>', unsafe_allow_html=True)    
     with col2:               # To display brand log
