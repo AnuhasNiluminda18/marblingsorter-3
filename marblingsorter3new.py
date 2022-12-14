@@ -19,6 +19,7 @@ with st.sidebar:
     }
     )
 if choose == "About":
+    image = Image.open('beefgradingcomparison.png')
     col1, col2 = st.columns( [0.6, 0.4])
     with col1:               # To display the header text using css style
         st.markdown(""" <style> .font {
@@ -31,10 +32,10 @@ if choose == "About":
     
         st.write("Web app – Web applications (web app) are popular in these days because anyone who has a device can be accessed to the internet easily than previously. Web app is hosted on a web server and it is delivered over the Internet through a browser interface. Conventional applications have to be installed on the device and then only it can be accessed. The Web app is convince in that situation; any browser you use ex- chrome, Mozilla Firefox or Safari can be used to access the web app(Postma & Goedhart, 2019) . ")    
     #st.image(profile, width=700 )
-        image = Image.open('beefgradingcomparison.png')
-    
+        
+  
 
-            
+          
 if choose == "Beef Marbling Sorter":
     @st.cache(allow_output_mutation=True)
     def load_model():
