@@ -90,18 +90,58 @@ if choose == "Beef Marbling Sorter":
 )
 if choose == "Beef price analysis":
     
-    col1, col2 = st.columns( [0.6, 0.4])
-    with col1:               # To display the header text using css style
-        st.markdown(""" <style> .font {
-        font-size:50px ; font-family: 'Cooper Black'; color: #FF9633;} 
-        </style> """, unsafe_allow_html=True)
-        st.markdown('<p class="font">If you are enthuciastic to know</p>', unsafe_allow_html=True)
-        link = '[GitHub](http://github.com)'
-        st.markdown(link, unsafe_allow_html=True)
-        link = '[More about marbling](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=0CAQQw7AJahcKEwjIqursnff7AhUAAAAAHQAAAAAQAw&url=https%3A%2F%2Fwww.masterclass.com%2Farticles%2Fwhat-is-marbling-in-meat-learn-about-the-different-types-of-marbling-and-what-factors-impact-marbling&psig=AOvVaw1gyAbF4erVKoA8j2rbis89&ust=1671042845137472)'
-        st.markdown(link, unsafe_allow_html=True)
-        link = '[Different Type of classifiaction on beef marbling](https://www.steaksandgame.com/wagyu-beef-grading-and-marble-scores-15658)'
-        st.markdown(link, unsafe_allow_html=True)
+    DEMO_IMAGE = 'beefgradingcomparison.png'
+
+#title of the web-app
     
-    with col2:               # To display brand log
-        image = Image.open('beefgradingcomparison.png')
+    
+    st.markdown("**Warning** Only add QR-code Images, other images will give out an error")
+
+
+    #uploading the imges
+    img_file_buffer = st.file_uploader("Upload an image which you want to Decode", type=[ "jpg", "jpeg",'png'])
+
+    if img_file_buffer is not None:
+        image = np.array(Image.open(img_file_buffer))
+
+    else:
+        demo_image = DEMO_IMAGE
+        image = np.array(Image.open(demo_image))
+
+    
+    
+    
+    
+    st.title('QR Code Decoding with OpenCV')
+    @st.cache
+    def qr_code_dec(image):
+    
+    decoder = cv2.QRCodeDetector()
+    
+    data, vertices, rectified_qr_code = decoder.detectAndDecode(image)
+    
+    if len(data) > 0:
+        print("Decoded Data: '{}'".format(data))
+
+    # Show the detection in the image:
+        show_qr_detection(image, vertices)
+        
+        rectified_image = np.uint8(rectified_qr_code)
+        
+        decoded_data = 'Decoded data: '+ data
+        
+        rectified_image = cv2.putText(rectified_image,decoded_data,(50,350),fontFace=cv2.FONT_HERSHEY_COMPLEX, fontScale = 2,
+            color = (250,225,100),thickness =  3, lineType=cv2.LINE_AA)
+        
+        
+        st.subheader('Orginal Image')
+
+    #display the image
+    st.image(
+    image, caption=f"Original Image", use_column_width=True
+    ) 
+       
+    st.subheader('Decoded data')
+
+    decoded_data = qr_code_dec(image)
+    st.markdown(decoded_data)    
