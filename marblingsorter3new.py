@@ -145,7 +145,7 @@ if img_file_buffer is not None:
 
 else:
     demo_image = DEMO_IMAGE
-    image = np.array(Image.open(demo_image))
+    image = Image.open(demo_image)
 
 
 st.subheader('Orginal Image')
