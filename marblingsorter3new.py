@@ -90,7 +90,7 @@ if choose == "Beef Marbling Sorter":
         #"This image most likely belongs to {} with a {:.2f} percent confidence.".format(class_names[np.argmax(score)], 100 * np.max(score))
 )
 if choose == "Beef price analysis":
-    DEMO_IMAGE = 'pavan-kunchala-QR.png'
+    DEMO_IMAGE = 'beefgradingcomparison.png'
 
 #title of the web-app
     st.title('QR Code Decoding with OpenCV')
