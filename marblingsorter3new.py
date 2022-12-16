@@ -90,31 +90,25 @@ if choose == "Beef Marbling Sorter":
         #"This image most likely belongs to {} with a {:.2f} percent confidence.".format(class_names[np.argmax(score)], 100 * np.max(score))
 )
 if choose == "Beef price analysis":
-    
-    DEMO_IMAGE = 'beefgradingcomparison.png'
+    DEMO_IMAGE = 'pavan-kunchala-QR.png'
 
 #title of the web-app
-    
-    
-    st.markdown("**Warning** Only add QR-code Images, other images will give out an error")
-
-
-    #uploading the imges
-    img_file_buffer = st.file_uploader("Upload an image which you want to Decode", type=[ "jpg", "jpeg",'png'])
-
-    if img_file_buffer is not None:
-        image = np.array(Image.open(img_file_buffer))
-
-    else:
-        demo_image = DEMO_IMAGE
-        image = np.array(Image.open(demo_image))
-
-    
-    
-    
-    
     st.title('QR Code Decoding with OpenCV')
-    @st.cache
+
+@st.cache
+    def show_qr_detection(img,pts):
+    
+        pts = np.int32(pts).reshape(-1, 2)
+    
+        for j in range(pts.shape[0]):
+        
+            cv2.line(img, tuple(pts[j]), tuple(pts[(j + 1) % pts.shape[0]]), (255, 0, 0), 5)
+        
+        for j in range(pts.shape[0]):
+        cv2.circle(img, tuple(pts[j]), 10, (255, 0, 255), -1)
+
+
+@st.cache
     def qr_code_dec(image):
     
         decoder = cv2.QRCodeDetector()
@@ -124,25 +118,47 @@ if choose == "Beef price analysis":
         if len(data) > 0:
             print("Decoded Data: '{}'".format(data))
 
-    # Show the detection in the image:
-            show_qr_detection(image, vertices)
+     # Show the detection in the image:
+             show_qr_detection(image, vertices)
         
-            rectified_image = np.uint8(rectified_qr_code)
+             rectified_image = np.uint8(rectified_qr_code)
         
-            decoded_data = 'Decoded data: '+ data
+             decoded_data = 'Decoded data: '+ data
         
-            rectified_image = cv2.putText(rectified_image,decoded_data,(50,350),fontFace=cv2.FONT_HERSHEY_COMPLEX, fontScale = 2,
-                color = (250,225,100),thickness =  3, lineType=cv2.LINE_AA)
+             rectified_image = cv2.putText(rectified_image,decoded_data,(50,350),fontFace=cv2.FONT_HERSHEY_COMPLEX, fontScale = 2,
+                 color = (250,225,100),thickness =  3, lineType=cv2.LINE_AA)
         
         
-        st.subheader('Orginal Image')
+        return decoded_data
 
-    #display the image
-    st.image(
+
+    
+    
+st.markdown("**Warning** Only add QR-code Images, other images will give out an error")
+
+
+#uploading the imges
+img_file_buffer = st.file_uploader("Upload an image which you want to Decode", type=[ "jpg", "jpeg",'png'])
+
+if img_file_buffer is not None:
+    image = np.array(Image.open(img_file_buffer))
+
+else:
+    demo_image = DEMO_IMAGE
+    image = np.array(Image.open(demo_image))
+
+
+st.subheader('Orginal Image')
+
+#display the image
+st.image(
     image, caption=f"Original Image", use_column_width=True
-    ) 
-       
-    st.subheader('Decoded data')
+) 
 
-    decoded_data = qr_code_dec(image)
-    st.markdown(decoded_data)    
+
+
+st.subheader('Decoded data')
+
+decoded_data = qr_code_dec(image)
+st.markdown(decoded_data)
+    
