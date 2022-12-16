@@ -103,11 +103,32 @@ if choose == "Beef price analysis":
     else:
         st.text("Please upload an image file")
 
-    import cv2
-    detector= cv2.QRCodeDetector()
+    @st.cache
+    def qr_code_dec(image):
     
-    reval,point,s_qr= detector.detectAndDecode(cv2.imread('image')
-    st.write("Predicted Class:",reval)                                        
+        decoder = cv2.QRCodeDetector()
+    
+        data, vertices, rectified_qr_code = decoder.detectAndDecode(image)
+    
+        if len(data) > 0:
+            print("Decoded Data: '{}'".format(data))
+
+    # Show the detection in the image:
+            show_qr_detection(image, vertices)
+        
+            rectified_image = np.uint8(rectified_qr_code)
+        
+            decoded_data = 'Decoded data: '+ data
+        
+            rectified_image = cv2.putText(rectified_image,decoded_data,(50,350),fontFace=cv2.FONT_HERSHEY_COMPLEX, fontScale = 2,
+                color = (250,225,100),thickness =  3, lineType=cv2.LINE_AA)
+        
+        
+      return decoded_data
+    st.subheader('Decoded data')
+
+    decoded_data = qr_code_dec(image)
+    st.markdown(decoded_data)
 
 
 
