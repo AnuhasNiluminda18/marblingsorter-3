@@ -120,7 +120,8 @@ if choose == "Beef price analysis":
         decoder = cv2.QRCodeDetector()
     
         data, vertices, rectified_qr_code = decoder.detectAndDecode(image)
-    
+          
+        global decoded_data
         if len(data) > 0:
             print("Decoded Data: '{}'".format(data))
 
@@ -133,8 +134,7 @@ if choose == "Beef price analysis":
         
             rectified_image = cv2.putText(rectified_image,decoded_data,(50,350),fontFace=cv2.FONT_HERSHEY_COMPLEX, fontScale = 2,
                 color = (250,225,100),thickness =  3, lineType=cv2.LINE_AA)
-        
-        global decoded_data
+      
         return decoded_data
 
 
