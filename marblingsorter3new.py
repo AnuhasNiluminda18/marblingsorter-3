@@ -124,7 +124,7 @@ if choose == "Beef price analysis":
                 color = (250,225,100),thickness =  3, lineType=cv2.LINE_AA)
         
         
-    return decoded_data
+        return decoded_data
     st.subheader('Decoded data')
 
     decoded_data = qr_code_dec(image)
