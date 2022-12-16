@@ -96,7 +96,7 @@ if choose == "Beef price analysis":
     st.title('QR Code Decoding with OpenCV')
 
 @st.cache
-    def show_qr_detection(img,pts):
+def show_qr_detection(img,pts):
     
         pts = np.int32(pts).reshape(-1, 2)
     
