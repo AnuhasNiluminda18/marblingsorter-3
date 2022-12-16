@@ -94,8 +94,7 @@ if choose == "Beef price analysis":
 
 
 
-import numpy as np
-import cv2
+
 
 DEMO_IMAGE = 'beefgradingcomparison.png'
 
