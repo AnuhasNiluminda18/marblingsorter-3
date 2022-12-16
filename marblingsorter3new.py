@@ -107,7 +107,7 @@ if choose == "Beef price analysis":
     detector= cv2.QRCodeDetector()
     
     reval,point,s_qr= detector.detectAndDecode(cv2.imread('image')
-    st.write("Link:",reval)                                          
+    st.markdown(reval)                                          
 
 
 
