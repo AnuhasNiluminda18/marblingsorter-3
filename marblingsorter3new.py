@@ -6,6 +6,7 @@ from streamlit_option_menu import option_menu
 from  PIL import Image
 import webbrowser
 import numpy as np
+import cv2
 
 with st.sidebar:
     choose = option_menu("Main menu", ["About", "Beef Marbling Sorter", "Beef price analysis",],
