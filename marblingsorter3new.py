@@ -125,7 +125,7 @@ if choose == "Beef price analysis":
             print("Decoded Data: '{}'".format(data))
 
     # Show the detection in the image:
-            #show_qr_detection(image, vertices)
+            show_qr_detection(image, vertices)
         
             rectified_image = np.uint8(rectified_qr_code)
         
