@@ -105,11 +105,11 @@ def show_qr_detection(img,pts):
             cv2.line(img, tuple(pts[j]), tuple(pts[(j + 1) % pts.shape[0]]), (255, 0, 0), 5)
         
         for j in range(pts.shape[0]):
-        cv2.circle(img, tuple(pts[j]), 10, (255, 0, 255), -1)
+            cv2.circle(img, tuple(pts[j]), 10, (255, 0, 255), -1)
 
 
 @st.cache
-    def qr_code_dec(image):
+def qr_code_dec(image):
     
         decoder = cv2.QRCodeDetector()
     
