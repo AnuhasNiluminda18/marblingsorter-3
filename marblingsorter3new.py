@@ -97,11 +97,11 @@ if choose == "Beef price analysis":
     #uploading the imges
     img_file_buffer = st.file_uploader("Upload an image which you want to Decode", type=[ "jpg", "jpeg",'png'])
 
-        if img_file_buffer is not None:
-            image = Image.open(img_file_buffer)
+    if img_file_buffer is not None:
+        image = Image.open(img_file_buffer)
 
-        else:
-            st.text("Please upload an image file")
+    else:
+        st.text("Please upload an image file")
 
     import cv2
     detector= cv2.QRCodeDetector()
