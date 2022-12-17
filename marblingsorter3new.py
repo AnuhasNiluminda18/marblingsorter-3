@@ -90,7 +90,7 @@ if choose == "Beef Marbling Sorter":
         #"This image most likely belongs to {} with a {:.2f} percent confidence.".format(class_names[np.argmax(score)], 100 * np.max(score))
 )
 if choose == "Beef Marbling Sorter":
-    col1, col2 = st.columns( [0.6, 0.4])
+        col1, col2 = st.columns( [0.6, 0.4])
         with col1:               # To display the header text using css style
             st.markdown(""" <style> .font {
             font-size:50px ; font-family: 'Cooper Black'; color: #FF9633;} 
