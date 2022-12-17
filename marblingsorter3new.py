@@ -168,4 +168,4 @@ st.subheader('Decoded data')
 
 decoded_data = qr_code_dec(image)
 st.markdown(decoded_data)
-  return decoded_data
+   return decoded_data
