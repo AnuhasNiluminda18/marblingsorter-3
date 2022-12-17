@@ -93,7 +93,7 @@ if choose == "More About Beef Marbling":
         image = Image.open('beefgradingcomparison.png')
     
         st.markdown(""" <style> .font {
-        font-size:50px ; font-family: 'Cooper Black'; color: #FF9633;} 
+        font-size:25px ; font-family: 'Cooper Black'; color: #FF9633;} 
         </style> """, unsafe_allow_html=True)
         st.markdown('<p class="font">If you are enthuciastic to know</p>', unsafe_allow_html=True)
         link = '[GitHub](http://github.com)'
