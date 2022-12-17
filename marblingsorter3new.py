@@ -9,7 +9,7 @@ import numpy as np
 import cv2
 
 with st.sidebar:
-    choose = option_menu("Main menu", ["About", "Beef Marbling Sorter", "Beef price analysis",],
+    choose = option_menu("Main menu", ["About", "Beef Marbling Sorter", "More About Beef Marbling",],
                          icons=['house', 'camera fill', 'kanban', 'book','person lines fill'],
                          menu_icon="app-indicator", default_index=0,
                          styles={
