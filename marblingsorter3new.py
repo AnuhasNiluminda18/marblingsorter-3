@@ -96,31 +96,11 @@ if choose == "Beef price analysis":
     import numpy as np
     import cv2
     
-    #DEMO_IMAGE = 'beefgradingcomparison.png'
+    DEMO_IMAGE = 'beefgradingcomparison.png'
 
    #title of the web-app
 st.title('QR Code Decoding with OpenCV')
 
-
-st.markdown("**Warning** Only add QR-code Images, other images will give out an error")
-
-#uploading the imges
-img_file_buffer = st.file_uploader("Upload an image which you want to Decode", type=[ "jpg", "jpeg",'png'])
-
-if img_file_buffer is not None:
-    image = np.array(Image.open(img_file_buffer))
-
-else:
-   # demo_image = DEMO_IMAGE
-   # image = np.array(Image.open(demo_image))
-    st.write("please upload correct image")
-
-st.subheader('Orginal Image')
-
-#display the image
-st.image(
-    image, caption=f"Original Image", use_column_width=True
-) 
 
 @st.cache
 def show_qr_detection(img,pts):
@@ -133,11 +113,6 @@ def show_qr_detection(img,pts):
         
     for j in range(pts.shape[0]):
         cv2.circle(img, tuple(pts[j]), 10, (255, 0, 255), -1)
- 
-
-
-
-st.subheader('Decoded data')
 
 @st.cache
 def qr_code_dec(image):
@@ -160,7 +135,37 @@ def qr_code_dec(image):
             color = (250,225,100),thickness =  3, lineType=cv2.LINE_AA)
         
         
-    return decoded_data
+    
+
+st.markdown("**Warning** Only add QR-code Images, other images will give out an error")
+
+#uploading the imges
+img_file_buffer = st.file_uploader("Upload an image which you want to Decode", type=[ "jpg", "jpeg",'png'])
+
+if img_file_buffer is not None:
+    image = np.array(Image.open(img_file_buffer))
+
+else:
+    demo_image = DEMO_IMAGE
+    image = np.array(Image.open(demo_image))
+  
+
+st.subheader('Orginal Image')
+
+#display the image
+st.image(
+    image, caption=f"Original Image", use_column_width=True
+) 
+
+
+ 
+
+
+
+st.subheader('Decoded data')
+
+
 
 decoded_data = qr_code_dec(image)
 st.markdown(decoded_data)
+    return decoded_data
