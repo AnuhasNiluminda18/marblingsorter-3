@@ -52,7 +52,7 @@ if choose == "Beef Marbling Sorter":
             # """
              #)
     from PIL import Image
-    image = Image.open('beefgradingcomparison.png')
+    image = Image.open('l-intro-1602257396.jpg')
 
     st.image(image, caption='Made for your convenience')
     file = st.file_uploader("You can see the beef marbling status of your beef steak by uploading here", type=["jpg", "png"])
