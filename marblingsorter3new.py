@@ -128,15 +128,9 @@ def qr_code_dec(image):
         show_qr_detection(image, vertices)
         decoded_data = 'Decoded data: '+ data
         rectified_image = np.uint8(rectified_qr_code)
-        
-   
-        
         rectified_image = cv2.putText(rectified_image,decoded_data,(50,350),fontFace=cv2.FONT_HERSHEY_COMPLEX, fontScale = 2,
             color = (250,225,100),thickness =  3, lineType=cv2.LINE_AA)
         
-        
-    
-
 st.markdown("**Warning** Only add QR-code Images, other images will give out an error")
 
 #uploading the imges
@@ -148,8 +142,7 @@ if img_file_buffer is not None:
 else:
     demo_image = DEMO_IMAGE
     image = np.array(Image.open(demo_image))
-  
-
+ 
 st.subheader('Orginal Image')
 
 #display the image
@@ -158,9 +151,6 @@ st.image(
 ) 
 
 st.subheader('Decoded data')
-
-
-
 decoded_data = qr_code_dec(image)
 st.markdown(decoded_data)
-return decoded_data
+   return decoded_data
