@@ -90,19 +90,18 @@ if choose == "Beef Marbling Sorter":
         #"This image most likely belongs to {} with a {:.2f} percent confidence.".format(class_names[np.argmax(score)], 100 * np.max(score))
 )
 if choose == "Beef Marbling Sorter":
-        col1, col2 = st.columns( [0.6, 0.4])
-        with col1:               # To display the header text using css style
-            st.markdown(""" <style> .font {
-            font-size:50px ; font-family: 'Cooper Black'; color: #FF9633;} 
-            </style> """, unsafe_allow_html=True)
-            st.markdown('<p class="font">If you are enthuciastic to know</p>', unsafe_allow_html=True)
-            link = '[GitHub](http://github.com)'
-            st.markdown(link, unsafe_allow_html=True)
-            link = '[More about marbling](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=0CAQQw7AJahcKEwjIqursnff7AhUAAAAAHQAAAAAQAw&url=https%3A%2F%2Fwww.masterclass.com%2Farticles%2Fwhat-is-marbling-in-meat-learn-about-the-different-types-of-marbling-and-what-factors-impact-marbling&psig=AOvVaw1gyAbF4erVKoA8j2rbis89&ust=1671042845137472)'
-            st.markdown(link, unsafe_allow_html=True)
-            link = '[Different Type of classifiaction on beef marbling](https://www.steaksandgame.com/wagyu-beef-grading-and-marble-scores-15658)'
-            st.markdown(link, unsafe_allow_html=True)
+    image = Image.open('beefgradingcomparison.png')
+    st.markdown(""" <style> .font {
+    font-size:50px ; font-family: 'Cooper Black'; color: #FF9633;} 
+    </style> """, unsafe_allow_html=True)
+    st.markdown('<p class="font">If you are enthuciastic to know</p>', unsafe_allow_html=True)
+    link = '[GitHub](http://github.com)'
+    st.markdown(link, unsafe_allow_html=True)
+    link = '[More about marbling](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=0CAQQw7AJahcKEwjIqursnff7AhUAAAAAHQAAAAAQAw&url=https%3A%2F%2Fwww.masterclass.com%2Farticles%2Fwhat-is-marbling-in-meat-learn-about-the-different-types-of-marbling-and-what-factors-impact-marbling&psig=AOvVaw1gyAbF4erVKoA8j2rbis89&ust=1671042845137472)'
+    st.markdown(link, unsafe_allow_html=True)
+    link = '[Different Type of classifiaction on beef marbling](https://www.steaksandgame.com/wagyu-beef-grading-and-marble-scores-15658)'
+    st.markdown(link, unsafe_allow_html=True)
     
-         with col2:               # To display brand log
-             image = Image.open('beefgradingcomparison.png')
+        
+             
 
