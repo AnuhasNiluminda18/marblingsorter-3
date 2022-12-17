@@ -89,7 +89,7 @@ if choose == "Beef Marbling Sorter":
         print(
         #"This image most likely belongs to {} with a {:.2f} percent confidence.".format(class_names[np.argmax(score)], 100 * np.max(score))
 )
-if choose == "Beef price analysis":
+if choose == "More About Beef Marbling":
         image = Image.open('beefgradingcomparison.png')
     
         st.markdown(""" <style> .font {
