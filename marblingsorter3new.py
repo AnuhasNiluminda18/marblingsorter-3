@@ -98,7 +98,7 @@ if choose == "Beef price analysis":
     img_file_buffer = st.file_uploader("Upload an image which you want to Decode", type=[ "jpg", "jpeg",'png'])
 
     if img_file_buffer is not None:
-        image = Image.open(img_file_buffer)
+        image = np.array(Image.open(img_file_buffer))
 
     else:
         st.text("Please upload an image file")
