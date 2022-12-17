@@ -118,7 +118,7 @@ def show_qr_detection(img,pts):
 def qr_code_dec(image):
     
     decoder = cv2.QRCodeDetector()
-    
+    decoded_data = 'Decoded data: '+ data
     data, vertices, rectified_qr_code = decoder.detectAndDecode(image)
     
     if len(data) > 0:
@@ -129,7 +129,7 @@ def qr_code_dec(image):
         
         rectified_image = np.uint8(rectified_qr_code)
         
-        decoded_data = 'Decoded data: '+ data
+        
         
         rectified_image = cv2.putText(rectified_image,decoded_data,(50,350),fontFace=cv2.FONT_HERSHEY_COMPLEX, fontScale = 2,
             color = (250,225,100),thickness =  3, lineType=cv2.LINE_AA)
