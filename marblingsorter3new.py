@@ -125,10 +125,10 @@ if choose == "Beef price analysis":
         
         
         return decoded_data
-    st.subheader('Decoded data')
+        st.subheader('Decoded data')
 
-    decoded_data = qr_code_dec(image)
-    st.markdown(decoded_data)
+        decoded_data = qr_code_dec(image)
+        st.markdown(decoded_data)
 
 
 
