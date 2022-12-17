@@ -96,7 +96,7 @@ if choose == "Beef price analysis":
     import numpy as np
     import cv2
     
-    DEMO_IMAGE = 'beefgradingcomparison.png'
+    #DEMO_IMAGE = 'beefgradingcomparison.png'
 
    #title of the web-app
 st.title('QR Code Decoding with OpenCV')
@@ -111,9 +111,9 @@ if img_file_buffer is not None:
     image = np.array(Image.open(img_file_buffer))
 
 else:
-    demo_image = DEMO_IMAGE
-    image = np.array(Image.open(demo_image))
-
+   # demo_image = DEMO_IMAGE
+   # image = np.array(Image.open(demo_image))
+    st.write("please upload correct image")
 
 st.subheader('Orginal Image')
 
