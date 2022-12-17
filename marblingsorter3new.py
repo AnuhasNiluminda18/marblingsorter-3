@@ -29,7 +29,7 @@ if choose == "About":
         </style> """, unsafe_allow_html=True)
         st.markdown('<p class="font">Marbling is the visible unsaturated (healthy) intramuscular fat that accumulates within the muscle and between the muscle fibre bundles. Visually, marbling is soft intramuscular (between the muscle fibre) fat made up of polyunsaturated, monounsaturated and saturated fats</p>', unsafe_allow_html=True)    
       
-   
+        st.markdown("***")
     
         st.write("Web app – Web applications (web app) are popular in these days because anyone who has a device can be accessed to the internet easily than previously. Web app is hosted on a web server and it is delivered over the Internet through a browser interface. Conventional applications have to be installed on the device and then only it can be accessed. The Web app is convince in that situation; any browser you use ex- chrome, Mozilla Firefox or Safari can be used to access the web app(Postma & Goedhart, 2019) . ")    
     #st.image(profile, width=700 )
