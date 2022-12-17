@@ -101,20 +101,6 @@ if choose == "Beef price analysis":
    #title of the web-app
 st.title('QR Code Decoding with OpenCV')
 
-@st.cache
-def show_qr_detection(img,pts):
-    
-    pts = np.int32(pts).reshape(-1, 2)
-    
-    for j in range(pts.shape[0]):
-        
-        cv2.line(img, tuple(pts[j]), tuple(pts[(j + 1) % pts.shape[0]]), (255, 0, 0), 5)
-        
-    for j in range(pts.shape[0]):
-        cv2.circle(img, tuple(pts[j]), 10, (255, 0, 255), -1)
- 
-
-
 
 st.markdown("**Warning** Only add QR-code Images, other images will give out an error")
 
@@ -135,7 +121,22 @@ st.subheader('Orginal Image')
 st.image(
     image, caption=f"Original Image", use_column_width=True
 ) 
+
+@st.cache
+def show_qr_detection(img,pts):
     
+    pts = np.int32(pts).reshape(-1, 2)
+    
+    for j in range(pts.shape[0]):
+        
+        cv2.line(img, tuple(pts[j]), tuple(pts[(j + 1) % pts.shape[0]]), (255, 0, 0), 5)
+        
+    for j in range(pts.shape[0]):
+        cv2.circle(img, tuple(pts[j]), 10, (255, 0, 255), -1)
+ 
+
+
+
 st.subheader('Decoded data')
 
 @st.cache
