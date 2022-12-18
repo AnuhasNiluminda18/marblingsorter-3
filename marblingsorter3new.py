@@ -43,7 +43,7 @@ if choose == "About":
         st.image(image, caption='Then select the image and wait for prediction is appeared under the uploaded image')
         #st.write("Then select the image and wait for prediction is appeared under the uploaded image")
         image = Image.open('Screenshot (133).png')
-         st.image(image, caption='Predictions')
+        st.image(image, caption='Predictions')
     #st.image(profile, width=700 )
  
   
