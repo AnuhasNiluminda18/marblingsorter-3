@@ -35,11 +35,15 @@ if choose == "About":
         font-size:20px ; font-family: 'Cooper Black'; color: #FF9633;} 
         </style> """, unsafe_allow_html=True)
         st.markdown('<p class="font">Instrctions to follow</p>', unsafe_allow_html=True)   
-        st.write("After launching the app you have to click on the browse button for uploading/ capturing the beef marbling image")
+        #st.write("After launching the app you have to click on the browse button for uploading/ capturing the beef marbling image")
         image = Image.open('Screenshot (132).png')
-        st.write("Then select the image and wait for prediction is appeared under the uploaded image") 
+        st.image(image, caption='After launching the app you have to click on the browse button for uploading/ capturing the beef marbling image')
+        #st.write("Then select the image and wait for prediction is appeared under the uploaded image") 
         image = Image.open('Screenshot (134).png')
+        st.image(image, caption='Then select the image and wait for prediction is appeared under the uploaded image')
+        #st.write("Then select the image and wait for prediction is appeared under the uploaded image")
         image = Image.open('Screenshot (133).png')
+         st.image(image, caption='Predictions')
     #st.image(profile, width=700 )
  
   
