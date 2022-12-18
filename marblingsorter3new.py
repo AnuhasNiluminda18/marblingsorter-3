@@ -31,7 +31,15 @@ if choose == "About":
       
         st.markdown("***")
     
-        st.write("Web app – Web applications (web app) are popular in these days because anyone who has a device can be accessed to the internet easily than previously. Web app is hosted on a web server and it is delivered over the Internet through a browser interface. Conventional applications have to be installed on the device and then only it can be accessed. The Web app is convince in that situation; any browser you use ex- chrome, Mozilla Firefox or Safari can be used to access the web app(Postma & Goedhart, 2019) . ")    
+        st.markdown(""" <style> .font {
+        font-size:20px ; font-family: 'Cooper Black'; color: #FF9633;} 
+        </style> """, unsafe_allow_html=True)
+        st.markdown('<p class="font">Instrctions to follow</p>', unsafe_allow_html=True)   
+        st.write("After launching the app you have to click on the browse button for uploading/ capturing the beef marbling image")
+        image = Image.open('Screenshot (132).png')
+        st.write("Then select the image and wait for prediction is appeared under the uploaded image") 
+        image = Image.open('Screenshot (134).png')
+        image = Image.open('Screenshot (133).png')
     #st.image(profile, width=700 )
  
   
