@@ -20,7 +20,7 @@ with st.sidebar:
     }
     )
 if choose == "About":
-        image = Image.open('Screenshot (126).png')
+        image = Image.open('Screenshot (135).png')
         
         st.image(image, caption='Made for your convenience')
         
